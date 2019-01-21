@@ -146,8 +146,8 @@ List all active orders in market.
 
 #### Fields
 * `id_action` - `1` for buy, `2` for sell (defaults to buy)
-* `currency_amount` - a currency being sold
-* `currency_price` - a currency being bought
+* `currency` - a currency being sold
+* `crypto` - a currency being bought
 
 #### Example output
 ```json
@@ -194,8 +194,8 @@ List all active trades on the market.
 
 #### Fields
 * `id_action` - `1` for buy, `2` for sell (defaults to buy)
-* `currency_amount` - a currency being sold
-* `currency_price` - a currency being bought
+* `currency` - a currency being sold
+* `crypto` - a currency being bought
 
 #### Example output
 ```json
@@ -240,10 +240,10 @@ List all active trades on the market.
 
 #### Fields
 * `id_action` - `1` for buy, `2` for sell (defaults to buy)
-* `currency_amount` - a currency being sold
-* `currency_price` - a currency being bought
-* `limit` - limit results from API (`2` - `800`)
-* `since` - an identifier of transaction the history should start with
+* `currency` - a currency being sold
+* `crypto` - a currency being bought
+* `limit` - (optional, default:200) limit results from API (`2` - `800`)
+* `since` - (optional) an identifier of transaction the history should start with
 
 
 #### Example output
@@ -289,10 +289,10 @@ List all active trades on the market.
 
 #### Fields
 * `id_action` - `1` for buy, `2` for sell (defaults to buy)
-* `currency_amount` - a currency being sold
-* `currency_price` - a currency being bought
-* `limit` - limit results from API (`2` - `800`)
-* `since` - an identifier of transaction the history should start with
+* `currency` - a currency being sold
+* `crypto` - a currency being bought
+* `limit` - (optional, default:200) limit results from API (`2` - `800`)
+* `since` - (optional) an identifier of transaction the history should start with
 
 
 #### Example output
