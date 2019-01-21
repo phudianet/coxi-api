@@ -100,8 +100,8 @@ Make a new offer on the Coxi.io market.
 * `id_action` - `1` for buy, `2` for sell (defaults to buy)
 * `amount` - the amount to trade
 * `price` - the exchange rate for given amount
-* `currency_amount` - a currency to sell
-* `currency_price` - a currency to buy
+* `currency` - a currency to sell
+* `crypto` - a currency to buy
 
 #### Example output
 ```json
