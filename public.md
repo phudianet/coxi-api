@@ -12,11 +12,11 @@ Example for last day in BTC to XRP market:
 https://coxi.io/public/graphs/BTCXRP/1day.json
 ```
 
-### Time periods
-* `15min`
+### Time
+* `6hour`
 * `1day`
 * `7days`
-* `1mounth`
+* `1month`
 
 
 ## Ticker
