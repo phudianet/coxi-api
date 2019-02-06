@@ -353,3 +353,54 @@ Check server time.
 * `timestamp` - POSIX time with microseconds
 * `datetime` - date and time in `Y-m-d %H:%i:%s` format
 * `tolerance` - time difference tolerance in seconds
+
+#### Code example
+
+```php
+<?php
+
+echo PHP_EOL.date("Y-m-d H:i:s");
+
+function Coxi_Api($method, $params = array())
+{
+	$key = '$2y$1..........................';
+	$secret = "4f51b..........";
+
+	$params["method"] = $method;
+	$params["time"] = time();
+
+	$post = http_build_query($params, "", "&");
+	$sign = hash_hmac("sha512", $post, $secret);
+	$headers = array(
+		"key: " . $key,
+		"hash: " . $sign,
+	);
+	$curl = curl_init();
+	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($curl, CURLOPT_URL, "https://coxi.io/api/");
+	curl_setopt($curl, CURLOPT_POST, true);
+	curl_setopt($curl, CURLOPT_POSTFIELDS, $post);
+	curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+	$result = curl_exec($curl);
+	echo PHP_EOL."error: ";
+	print_r(curl_error($curl));
+	echo PHP_EOL."resp:";
+	print_r($result);
+	$result = json_decode($result);
+
+	if(!empty($result->error)){
+		// Error code: $result->error
+		// Error message: $result->errorMsg
+	}
+
+	return $result;
+}
+
+$time = Coxi_Api("time");
+var_dump($time);
+
+// In case of time tolerance error you should check server time and make sure that the difference between your and server time is not greater than 10 seconds.
+$info = Coxi_Api("info");
+var_dump($info->balance);
+
+```
