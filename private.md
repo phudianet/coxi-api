@@ -284,6 +284,7 @@ List all active trades on the market.
   * `total` - a total value of your offer
   * `totalCurrency` - a currency used for the value of `total`
   * `datetime` - date and time when order was issued
+  * `fee` - fee amount
 
 ### `markethistory`
 
